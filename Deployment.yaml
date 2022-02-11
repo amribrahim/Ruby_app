@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruby-app
+  labels:
+    app: ruby
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ruby
+  template:
+    metadata:
+      labels:
+        app: ruby
+    spec:
+      containers:
+      - name: ruby
+        image: amribrahim00/ruby-app:latest
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /health-check
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health-check
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
+          failureThreshold: 3          
+        startupProbe:
+  	  httpGet:
+            path: /health-check
+            port: 80
+          failureThreshold: 3
+          periodSeconds: 9
