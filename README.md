@@ -62,4 +62,5 @@ kubectl get svc -A
 the deployment strategy for this application is to use default kubernetes deployment strategy (The rolling deployment) ,It replaces pods one by one of the previous version of our application with pods of the new version without any cluster downtime.
 the below image show the archticture for the app, one loadbalancer and three replicas to distribute the traffic
 
-![image](https://user-images.githubusercontent.com/11281850/153650592-cbe2585e-da5e-4835-9caa-b2fb82e1efdf.png)
+![image](https://user-images.githubusercontent.com/11281850/153651151-17b34209-5718-4b48-9f7f-961c07d0511b.png)
+
