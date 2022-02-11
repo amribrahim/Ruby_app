@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: ruby-service
 spec:
+  # this type is loadbalancer for high availability
   type: LoadBalancer
   selector:
     app: ruby
