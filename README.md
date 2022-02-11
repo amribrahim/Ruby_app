@@ -38,7 +38,11 @@ the follwing steps show the instructions to configure the enviroment
    kubectl set image deployment/ruby-app  ruby=amribrahim00/ruby-app:latest # set the pushed image in deployment file
   ``` 
 ## run the envrioment
-to run the enviroment you need first to deploy the kubernetes files first using this command:
+start minikube using this command
+```
+minikube start
+```
+deploy the kubernetes files first using this command:
 ```
 kubectl apply -f . 
 ```
