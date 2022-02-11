@@ -1,0 +1,18 @@
+---
+  - name: Deploy Ruby app
+    hosts: localhost
+  #  become: yes
+    become_user: amribrahim00
+    tasks:
+      - name: buidl the image 
+        command: docker build -t amribrahim00/ruby-app:latest .
+      
+      - name: push the image
+        command: docker push amribrahim00/ruby-app:latest
+        
+      - name: set the image in deployment file
+        command: kubectl set image deployment/ruby-app  ruby=amribrahim00/ruby-app:latest
+        
+        
+        
+        
