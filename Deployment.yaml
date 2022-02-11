@@ -22,6 +22,7 @@ spec:
         runAsUser: 1000
         ports:
         - containerPort: 80
+        # the below lines for points three and four realted to start the application and probes
         livenessProbe:
           httpGet:
             path: /health-check
